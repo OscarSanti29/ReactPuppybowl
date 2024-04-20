@@ -28,10 +28,16 @@ export default function Singleplayer() {
 
   return (
     <>
-      <h1>Singleplayer</h1>
-      <p>{id}</p>
+      <div className="flex flex-col justify-center bg-gray-100">
+        <div className="flex justify-between items-center px-20 py-5">
+          <h1 className="text-2xl uppercase font-bold mt-10 text-center mb-10">
+            Single Player
+          </h1>
+        </div>
+      </div>
+      <p className="text-lg uppercase font-bold">{id}</p>
       {oneplayer && (
-        <div>
+        <div className="text-lg uppercase font-bold">
           <ul>
             <img src={oneplayer.imageUrl} />
             <li>Name: {oneplayer.name}</li>

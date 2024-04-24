@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchsinglePlayer } from "../API";
 import { deleteplayer } from "../API";
 export default function Singleplayer() {
   const { id } = useParams();
   console.log(id);
+  const navigate = useNavigate();
+
   const [oneplayer, setoneplayer] = useState(null);
   useEffect(() => {
     async function fetchplayer() {
@@ -17,10 +19,12 @@ export default function Singleplayer() {
     }
     fetchplayer();
   }, [id]);
+
   async function handleDelete() {
     try {
       const response = await deleteplayer(id);
       console.log("Player deleted:", response);
+      navigate("/");
     } catch (error) {
       console.error("Error deleting player:", error);
     }

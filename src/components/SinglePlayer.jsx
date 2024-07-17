@@ -43,7 +43,7 @@ export default function Singleplayer() {
       {oneplayer && (
         <div className="text-lg uppercase font-bold">
           <ul>
-            <img src={oneplayer.imageUrl} />
+            <img className="size-96" src={oneplayer.imageUrl} />
             <li>Name: {oneplayer.name}</li>
             <li>Breed: {oneplayer.breed}</li>
           </ul>
